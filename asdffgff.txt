@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DivoroX — Redefine Your Refresh</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --accent: #d4ff00;
+    --accent2: #ff3c00;
+    --text: #f0ede8;
+    --muted: #888;
+    --border: rgba(255,255,255,0.08);
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–bg);
+color: var(–text);
+font-family: ‘Manrope’, sans-serif;
+overflow-x: hidden;
+}
+
+/* ── ANNOUNCEMENT BAR ── */
+.announcement {
+background: var(–accent);
+color: #000;
+text-align: center;
+padding: 10px;
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 13px;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+/* ── NAVBAR ── */
+nav {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(10,10,10,0.92);
+backdrop-filter: blur(16px);
+border-bottom: 1px solid var(–border);
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 60px;
+height: 70px;
+}
+
+.nav-logo {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 32px;
+letter-spacing: 4px;
+color: var(–text);
+text-decoration: none;
+position: relative;
+}
+.nav-logo span { color: var(–accent); }
+
+.nav-links {
+display: flex;
+gap: 36px;
+list-style: none;
+}
+.nav-links a {
+color: var(–muted);
+text-decoration: none;
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 600;
+font-size: 14px;
+letter-spacing: 2px;
+text-transform: uppercase;
+transition: color .2s;
+}
+.nav-links a:hover { color: var(–accent); }
+
+.nav-actions {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+.nav-cart {
+background: var(–accent);
+color: #000;
+border: none;
+padding: 10px 24px;
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 13px;
+letter-spacing: 2px;
+text-transform: uppercase;
+cursor: pointer;
+transition: background .2s, transform .1s;
+}
+.nav-cart:hover { background: #bfef00; transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+position: relative;
+min-height: 95vh;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+background: #050505;
+}
+
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 70% 60% at 50% 40%, rgba(212,255,0,0.07) 0%, transparent 70%),
+radial-gradient(ellipse 40% 40% at 80% 70%, rgba(255,60,0,0.06) 0%, transparent 60%);
+}
+
+.hero-grid {
+position: absolute;
+inset: 0;
+background-image:
+linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+background-size: 60px 60px;
+}
+
+.hero-content {
+position: relative;
+text-align: center;
+max-width: 900px;
+padding: 0 30px;
+animation: fadeUp 1s ease both;
+}
+
+.hero-tag {
+display: inline-block;
+border: 1px solid var(–accent);
+color: var(–accent);
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase;
+padding: 6px 18px;
+margin-bottom: 32px;
+animation: fadeUp 1s ease .1s both;
+}
+
+.hero-title {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(64px, 10vw, 140px);
+line-height: 0.95;
+letter-spacing: 2px;
+margin-bottom: 28px;
+animation: fadeUp 1s ease .2s both;
+}
+.hero-title .accent { color: var(–accent); }
+.hero-title .accent2 { color: var(–accent2); }
+
+.hero-sub {
+font-size: 16px;
+color: var(–muted);
+max-width: 520px;
+margin: 0 auto 44px;
+line-height: 1.7;
+font-weight: 400;
+animation: fadeUp 1s ease .3s both;
+}
+
+.hero-btns {
+display: flex;
+gap: 16px;
+justify-content: center;
+animation: fadeUp 1s ease .4s both;
+}
+
+.btn-primary {
+background: var(–accent);
+color: #000;
+border: none;
+padding: 16px 40px;
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 3px;
+text-transform: uppercase;
+cursor: pointer;
+transition: all .2s;
+text-decoration: none;
+display: inline-block;
+}
+.btn-primary:hover { background: #bfef00; transform: translateY(-2px); }
+
+.btn-secondary {
+background: transparent;
+color: var(–text);
+border: 1px solid rgba(255,255,255,0.25);
+padding: 16px 40px;
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 3px;
+text-transform: uppercase;
+cursor: pointer;
+transition: all .2s;
+text-decoration: none;
+display: inline-block;
+}
+.btn-secondary:hover { border-color: var(–accent); color: var(–accent); }
+
+/* scroll indicator */
+.scroll-hint {
+position: absolute;
+bottom: 36px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+color: var(–muted);
+font-family: ‘Rajdhani’, sans-serif;
+font-size: 11px;
+letter-spacing: 3px;
+text-transform: uppercase;
+animation: fadeUp 1s ease .6s both;
+}
+.scroll-line {
+width: 1px;
+height: 50px;
+background: linear-gradient(to bottom, var(–accent), transparent);
+animation: scrollPulse 2s ease infinite;
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+overflow: hidden;
+border-top: 1px solid var(–border);
+border-bottom: 1px solid var(–border);
+background: var(–surface);
+padding: 14px 0;
+}
+.marquee-track {
+display: flex;
+gap: 0;
+white-space: nowrap;
+animation: marquee 25s linear infinite;
+}
+.marquee-item {
+display: inline-flex;
+align-items: center;
+gap: 16px;
+padding: 0 32px;
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 13px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–muted);
+}
+.marquee-dot { color: var(–accent); font-size: 20px; }
+
+/* ── PRODUCTS ── */
+.section {
+padding: 100px 60px;
+}
+
+.section-header {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+margin-bottom: 60px;
+}
+
+.section-label {
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 12px;
+}
+
+.section-title {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(42px, 5vw, 72px);
+line-height: 1;
+letter-spacing: 1px;
+}
+
+.section-desc {
+max-width: 380px;
+color: var(–muted);
+font-size: 14px;
+line-height: 1.8;
+}
+
+.products-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2px;
+}
+
+.product-card {
+position: relative;
+background: var(–surface);
+overflow: hidden;
+cursor: pointer;
+group: true;
+}
+
+.product-card:first-child {
+grid-row: span 2;
+}
+
+.product-img {
+width: 100%;
+aspect-ratio: 1;
+object-fit: cover;
+display: block;
+transition: transform .5s ease;
+background: #1a1a1a;
+}
+.product-card:first-child .product-img { height: 100%; aspect-ratio: unset; }
+
+.product-card:hover .product-img { transform: scale(1.04); }
+
+.product-overlay {
+position: absolute;
+inset: 0;
+background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 50%);
+padding: 28px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+opacity: 0;
+transition: opacity .3s;
+}
+.product-card:hover .product-overlay { opacity: 1; }
+
+.product-name {
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 18px;
+letter-spacing: 1px;
+margin-bottom: 4px;
+}
+.product-price {
+color: var(–accent);
+font-weight: 600;
+font-size: 14px;
+margin-bottom: 14px;
+}
+.product-badge {
+position: absolute;
+top: 20px;
+right: 20px;
+background: var(–accent2);
+color: #fff;
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 11px;
+letter-spacing: 2px;
+padding: 4px 10px;
+text-transform: uppercase;
+}
+
+/* Placeholder product colors */
+.p1 { background: linear-gradient(135deg, #1c1c1c, #2d2d1a); }
+.p2 { background: linear-gradient(135deg, #1a1c1c, #1a2d2a); }
+.p3 { background: linear-gradient(135deg, #2d1a1a, #1c1a1c); }
+.p4 { background: linear-gradient(135deg, #1a1a2d, #1c1c2d); }
+.p5 { background: linear-gradient(135deg, #2d2d1a, #1a1c1a); }
+
+.prod-icon {
+font-size: clamp(60px, 8vw, 100px);
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100%;
+min-height: 200px;
+}
+
+/* ── FLAVOUR FEATURE ── */
+.flavour-section {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2px;
+background: var(–bg);
+}
+
+.flavour-block {
+padding: 80px 60px;
+position: relative;
+overflow: hidden;
+}
+.flavour-block.dark { background: var(–surface); }
+.flavour-block.accent-bg { background: var(–accent); color: #000; }
+
+.flavour-block .big-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 160px;
+line-height: 1;
+opacity: 0.06;
+position: absolute;
+top: 20px;
+right: -10px;
+letter-spacing: -5px;
+pointer-events: none;
+}
+
+.flavour-block .flavour-tag {
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase;
+margin-bottom: 20px;
+opacity: 0.7;
+}
+
+.flavour-block h3 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 56px;
+line-height: 1;
+margin-bottom: 24px;
+}
+
+.flavour-block p {
+font-size: 15px;
+line-height: 1.8;
+max-width: 380px;
+opacity: 0.75;
+margin-bottom: 32px;
+}
+
+.flavour-pills {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 36px;
+}
+
+.pill {
+border: 1px solid currentColor;
+padding: 6px 16px;
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 600;
+font-size: 12px;
+letter-spacing: 2px;
+text-transform: uppercase;
+opacity: 0.7;
+}
+
+.flavour-emoji {
+font-size: 80px;
+margin-bottom: 24px;
+display: block;
+}
+
+/* ── BENEFITS ── */
+.benefits-strip {
+padding: 80px 60px;
+background: var(–surface);
+}
+
+.benefits-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1px;
+background: var(–border);
+border: 1px solid var(–border);
+}
+
+.benefit-card {
+background: var(–surface);
+padding: 48px 40px;
+position: relative;
+transition: background .3s;
+}
+.benefit-card:hover { background: #161616; }
+
+.benefit-icon {
+font-size: 40px;
+margin-bottom: 20px;
+display: block;
+}
+
+.benefit-title {
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 18px;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+
+.benefit-sub {
+color: var(–accent);
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 600;
+font-size: 12px;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 16px;
+}
+
+.benefit-desc {
+color: var(–muted);
+font-size: 14px;
+line-height: 1.7;
+}
+
+/* ── WHY US ── */
+.why-section {
+padding: 100px 60px;
+}
+
+.why-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+margin-top: 60px;
+}
+
+.why-list { display: flex; flex-direction: column; gap: 1px; }
+
+.why-item {
+display: flex;
+gap: 24px;
+align-items: flex-start;
+padding: 32px;
+background: var(–surface);
+border-left: 3px solid transparent;
+transition: border-color .3s, background .3s;
+cursor: default;
+}
+.why-item:hover { border-color: var(–accent); background: #141414; }
+
+.why-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 40px;
+color: var(–accent);
+line-height: 1;
+min-width: 48px;
+}
+
+.why-text h4 {
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 18px;
+letter-spacing: 1px;
+margin-bottom: 8px;
+text-transform: uppercase;
+}
+
+.why-text p {
+color: var(–muted);
+font-size: 14px;
+line-height: 1.7;
+}
+
+.why-visual {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2px;
+}
+
+.why-stat {
+background: var(–surface);
+padding: 40px 32px;
+text-align: center;
+}
+.why-stat:first-child {
+background: var(–accent);
+color: #000;
+grid-column: span 2;
+}
+
+.stat-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 64px;
+line-height: 1;
+margin-bottom: 8px;
+}
+.stat-label {
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 600;
+font-size: 12px;
+letter-spacing: 3px;
+text-transform: uppercase;
+opacity: 0.7;
+}
+
+/* ── CTA ── */
+.cta-section {
+padding: 100px 60px;
+text-align: center;
+position: relative;
+overflow: hidden;
+background: var(–surface);
+}
+
+.cta-bg-text {
+position: absolute;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(100px, 20vw, 260px);
+color: rgba(212,255,0,0.03);
+letter-spacing: -5px;
+pointer-events: none;
+user-select: none;
+}
+
+.cta-section h2 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(48px, 7vw, 96px);
+line-height: 1;
+margin-bottom: 24px;
+position: relative;
+}
+
+.cta-section p {
+color: var(–muted);
+font-size: 16px;
+max-width: 460px;
+margin: 0 auto 40px;
+line-height: 1.7;
+position: relative;
+}
+
+/* ── FOOTER ── */
+footer {
+background: #050505;
+border-top: 1px solid var(–border);
+padding: 70px 60px 40px;
+}
+
+.footer-grid {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+gap: 60px;
+margin-bottom: 60px;
+}
+
+.footer-brand .logo {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 36px;
+letter-spacing: 4px;
+margin-bottom: 16px;
+}
+.footer-brand .logo span { color: var(–accent); }
+
+.footer-brand p {
+color: var(–muted);
+font-size: 14px;
+line-height: 1.7;
+max-width: 260px;
+margin-bottom: 24px;
+}
+
+.social-links {
+display: flex;
+gap: 12px;
+}
+.social-link {
+width: 38px;
+height: 38px;
+border: 1px solid var(–border);
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(–muted);
+font-size: 16px;
+text-decoration: none;
+transition: all .2s;
+}
+.social-link:hover { border-color: var(–accent); color: var(–accent); }
+
+.footer-col h5 {
+font-family: ‘Rajdhani’, sans-serif;
+font-weight: 700;
+font-size: 12px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–text);
+margin-bottom: 20px;
+}
+
+.footer-col ul {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.footer-col a {
+color: var(–muted);
+text-decoration: none;
+font-size: 14px;
+transition: color .2s;
+}
+.footer-col a:hover { color: var(–accent); }
+
+.footer-bottom {
+border-top: 1px solid var(–border);
+padding-top: 28px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: var(–muted);
+font-size: 13px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes marquee {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+}
+@keyframes scrollPulse {
+0%, 100% { opacity: 0.3; transform: scaleY(1); }
+50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* Observe-based reveal */
+.reveal {
+opacity: 0;
+transform: translateY(40px);
+transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+nav { padding: 0 20px; }
+.nav-links { display: none; }
+.section { padding: 60px 20px; }
+.section-header { flex-direction: column; gap: 20px; align-items: flex-start; }
+.products-grid { grid-template-columns: 1fr; }
+.product-card:first-child { grid-row: span 1; }
+.flavour-section { grid-template-columns: 1fr; }
+.benefits-grid { grid-template-columns: 1fr; }
+.why-grid { grid-template-columns: 1fr; }
+.footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+.footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+.hero-btns { flex-direction: column; align-items: center; }
+.benefits-strip { padding: 60px 20px; }
+.why-section { padding: 60px 20px; }
+.cta-section { padding: 60px 20px; }
+footer { padding: 50px 20px 30px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+
+<div class="announcement">
+  🚀 Introducing DivoroX — India's Next-Gen Performance Drink &nbsp;|&nbsp; Free Shipping on Orders ₹500+
+</div>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">Divoro<span>X</span></a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#blogs">Blogs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-cart">Cart (0)</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Introducing DivoroX.in</div>
+    <h1 class="hero-title">
+      FUEL<br>
+      YOUR<br>
+      <span class="accent">X</span><span class="accent2">-</span>FACTOR
+    </h1>
+    <p class="hero-sub">
+      India's most intense performance drink — crafted for those who push limits, chase goals, and demand more from every sip.
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Shop Now</a>
+      <a href="#about" class="btn-secondary">Our Story</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Zero Sugar <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Max Energy <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Gut Health <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Bold Flavours <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">DivoroX.in <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Made for Legends <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Zero Sugar <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Max Energy <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Gut Health <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Bold Flavours <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">DivoroX.in <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Made for Legends <span class="marquee-dot">✦</span></span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+
+<section class="section" id="products">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Our Range</div>
+      <h2 class="section-title">OUR<br>PRODUCTS</h2>
+    </div>
+    <p class="section-desc">We bring you powerfully flavoured, performance-first drinks. Explore our range and find your X-factor.</p>
+  </div>
+
+  <div class="products-grid reveal">
+    <!-- Card 1 - tall -->
+    <div class="product-card p1" style="min-height:460px;">
+      <div class="prod-icon p1" style="height:100%; min-height:460px;">⚡</div>
+      <div class="product-badge">Bestseller</div>
+      <div class="product-overlay">
+        <div class="product-name">DivoroX Original Blast</div>
+        <div class="product-price">₹99 — Pack of 2</div>
+        <button class="btn-primary" style="font-size:12px;padding:10px 20px;">Add to Cart</button>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="product-card p2">
+      <div class="prod-icon p2">🍋</div>
+      <div class="product-badge">New</div>
+      <div class="product-overlay">
+        <div class="product-name">Citrus Storm — Pack of 6</div>
+        <div class="product-price">₹549</div>
+        <button class="btn-primary" style="font-size:12px;padding:10px 20px;">Add to Cart</button>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="product-card p3">
+      <div class="prod-icon p3">🌶️</div>
+      <div class="product-overlay">
+        <div class="product-name">Spice Rush — Pack of 6</div>
+        <div class="product-price">₹549</div>
+        <button class="btn-primary" style="font-size:12px;padding:10px 20px;">Add to Cart</button>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="product-card p4">
+      <div class="prod-icon p4">🫐</div>
+      <div class="product-badge">-14%</div>
+      <div class="product-overlay">
+        <div class="product-name">Berry Havoc — Pack of 12</div>
+        <div class="product-price">₹999 <s style="opacity:.5;font-size:12px;">₹1,188</s></div>
+        <button class="btn-primary" style="font-size:12px;padding:10px 20px;">Add to Cart</button>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="product-card p5">
+      <div class="prod-icon p5">🎯</div>
+      <div class="product-badge">-14%</div>
+      <div class="product-overlay">
+        <div class="product-name">Assorted Mega Pack — 24</div>
+        <div class="product-price">₹1,999 <s style="opacity:.5;font-size:12px;">₹2,376</s></div>
+        <button class="btn-primary" style="font-size:12px;padding:10px 20px;">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLAVOUR FEATURES -->
+
+<div class="flavour-section" id="about">
+  <div class="flavour-block dark reveal">
+    <div class="big-num">01</div>
+    <span class="flavour-emoji">⚡</span>
+    <div class="flavour-tag">Signature Flavour</div>
+    <h3>CITRUS<br>STORM</h3>
+    <div class="flavour-pills">
+      <span class="pill">Electrolytes</span>
+      <span class="pill">Zero Sugar</span>
+      <span class="pill">High Energy</span>
+    </div>
+    <p>A sharp citrus rush that hits fast. Loaded with electrolytes and zero added sugar, Citrus Storm is the drink built for movement, hustle, and momentum.</p>
+    <a href="#" class="btn-secondary">Explore Flavour</a>
+  </div>
+  <div class="flavour-block accent-bg reveal">
+    <div class="big-num" style="color:#000; opacity:0.06;">02</div>
+    <span class="flavour-emoji">🌶️</span>
+    <div class="flavour-tag">Bold & Fiery</div>
+    <h3>SPICE<br>RUSH</h3>
+    <div class="flavour-pills">
+      <span class="pill">ACV Boost</span>
+      <span class="pill">Gut Health</span>
+      <span class="pill">Bold Kick</span>
+    </div>
+    <p>Daring, bold, and unforgettable. Spice Rush blends the fire of Indian spices with the goodness of ACV. Not for the faint of heart.</p>
+    <a href="#" class="btn-primary" style="background:#000;color:#fff;">Explore Flavour</a>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+
+<div class="benefits-strip reveal">
+  <div class="section-label" style="text-align:center; margin-bottom:48px;">What's Inside</div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <span class="benefit-icon">🧬</span>
+      <div class="benefit-sub">Core Benefit</div>
+      <div class="benefit-title">Prebiotic Formula</div>
+      <div class="benefit-desc">4g of prebiotic fibre per can. Feed your gut microbiome the good stuff and keep your digestive health in peak form.</div>
+    </div>
+    <div class="benefit-card">
+      <span class="benefit-icon">🍎</span>
+      <div class="benefit-sub">Powered By</div>
+      <div class="benefit-title">ACV & Vitamin C</div>
+      <div class="benefit-desc">Apple Cider Vinegar and Vitamin C work together to amplify flavour and add a real wellness edge to every sip.</div>
+    </div>
+    <div class="benefit-card">
+      <span class="benefit-icon">🚫</span>
+      <div class="benefit-sub">Our Promise</div>
+      <div class="benefit-title">Zero Sugar</div>
+      <div class="benefit-desc">Absolutely no added sugar. All the bold taste, none of the guilt. DivoroX lets you perform without compromise.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+
+<section class="why-section" id="why">
+  <div class="section-label">Why Choose Us</div>
+  <h2 class="section-title">WHY WE ARE<br>DIFFERENT</h2>
+
+  <div class="why-grid">
+    <div class="why-list reveal">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-text">
+          <h4>Made for Modern Warriors</h4>
+          <p>Whether you're at the gym, grinding in the office, or out with friends — DivoroX fits every moment of your life.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-text">
+          <h4>ACV-Powered Performance</h4>
+          <p>We're redefining what a performance drink can be. ACV meets prebiotics meets bold Indian flavours — a category first.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-text">
+          <h4>Zero Sugar, Maximum Taste</h4>
+          <p>We skip the sugar without skipping the flavour. Every variant is engineered for taste that hits without the crash.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-text">
+          <h4>Just Getting Started</h4>
+          <p>More flavours, more power, more innovation is coming. DivoroX is building the future of Indian functional beverages.</p>
+        </div>
+      </div>
+    </div>
+
+```
+<div class="why-visual reveal">
+  <div class="why-stat">
+    <div class="stat-num">4g</div>
+    <div class="stat-label">Prebiotic Fibre Per Can</div>
+  </div>
+  <div class="why-stat">
+    <div class="stat-num">0g</div>
+    <div class="stat-label">Added Sugar</div>
+  </div>
+  <div class="why-stat">
+    <div class="stat-num">3X</div>
+    <div class="stat-label">Electrolytes vs Regular Soda</div>
+  </div>
+  <div class="why-stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Indian Made</div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section">
+  <div class="cta-bg-text">DIVOROX</div>
+  <div class="section-label">Ready to Level Up?</div>
+  <h2>FOR EVERY<br><span style="color:var(--accent)">MOMENTUM</span></h2>
+  <p>Whether you're crushing a workout, grinding late nights, or hitting the streets — DivoroX is the drink that matches your pace.</p>
+  <a href="#products" class="btn-primary" style="position:relative;">Shop All Products</a>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Divoro<span>X</span></div>
+      <p>India's next-gen performance drink — bold flavours, prebiotic goodness, zero sugar. Redefine your refresh.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">f</a>
+        <a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">▶</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <ul>
+        <li><a href="#">DivoroX.in</a></li>
+        <li><a href="tel:+919999999999">+91 99999 99999</a></li>
+        <li><a href="mailto:hello@divorox.in">hello@divorox.in</a></li>
+        <li><a href="#">India 🇮🇳</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 DivoroX. All rights reserved.</span>
+    <span style="color:var(--accent); font-family:'Rajdhani',sans-serif; font-weight:700; letter-spacing:3px; font-size:12px; text-transform:uppercase;">DIVOROX.IN</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav active link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('mouseenter', e => {
+      document.querySelectorAll('.nav-links a').forEach(l => l.style.color = '');
+      e.target.style.color = 'var(--accent)';
+    });
+  });
+
+  // Cart button
+  document.querySelectorAll('.btn-primary[onclick], .nav-cart').forEach(btn => {
+    btn.style.cursor = 'pointer';
+  });
+</script>
+
+</body>
+</html>
